@@ -53,11 +53,7 @@ class FinetunedLLM(nn.Module):
     def load(cls, args_fp, state_dict_fp):
         with open(args_fp, "r") as fp:
             kwargs = json.load(fp=fp)
-        llm = BertModel.from_pretrained(
-            "allenai/scibert_scivocab_uncased", 
-            return_dict=False,
-            cache_dir="/tmp/huggingface_cache"  # Use local cache
-        )
+        llm = BertModel.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False, cache_dir="/tmp/huggingface_cache")  # Use local cache
         model = cls(llm=llm, **kwargs)
         model.load_state_dict(torch.load(state_dict_fp, map_location=torch.device("cpu")))
         return model
