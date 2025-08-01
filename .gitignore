@@ -6,6 +6,10 @@ __pycache__/
 mlruns/
 mlflow.db
 
+# Documentation
+docs/_build/
+docs/madewithml/
+
 # Ignore Mac system files
 .DS_Store
 
