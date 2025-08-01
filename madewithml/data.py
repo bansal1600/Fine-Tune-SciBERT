@@ -101,6 +101,20 @@ def clean_text(text: str, stopwords: List = STOPWORDS) -> str:
     return text
 
 
+# Global tokenizer to avoid repeated downloads
+_tokenizer = None
+
+def get_tokenizer():
+    """Get or initialize the global tokenizer."""
+    global _tokenizer
+    if _tokenizer is None:
+        _tokenizer = BertTokenizer.from_pretrained(
+            "allenai/scibert_scivocab_uncased", 
+            return_dict=False,
+            cache_dir="/tmp/huggingface_cache"  # Use local cache
+        )
+    return _tokenizer
+
 def tokenize(batch: Dict) -> Dict:
     """Tokenize the text input in our batch using a tokenizer.
 
@@ -110,7 +124,7 @@ def tokenize(batch: Dict) -> Dict:
     Returns:
         Dict: batch of data with the results of tokenization (`input_ids` and `attention_mask`) on the text inputs.
     """
-    tokenizer = BertTokenizer.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False)
+    tokenizer = get_tokenizer()
     encoded_inputs = tokenizer(batch["text"].tolist(), return_tensors="np", padding="longest")
     return dict(ids=encoded_inputs["input_ids"], masks=encoded_inputs["attention_mask"], targets=np.array(batch["tag"]))
 
