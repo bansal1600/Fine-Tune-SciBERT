@@ -104,16 +104,16 @@ def clean_text(text: str, stopwords: List = STOPWORDS) -> str:
 # Global tokenizer to avoid repeated downloads
 _tokenizer = None
 
+
 def get_tokenizer():
     """Get or initialize the global tokenizer."""
     global _tokenizer
     if _tokenizer is None:
         _tokenizer = BertTokenizer.from_pretrained(
-            "allenai/scibert_scivocab_uncased", 
-            return_dict=False,
-            cache_dir="/tmp/huggingface_cache"  # Use local cache
+            "allenai/scibert_scivocab_uncased", return_dict=False, cache_dir="/tmp/huggingface_cache"  # Use local cache
         )
     return _tokenizer
+
 
 def tokenize(batch: Dict) -> Dict:
     """Tokenize the text input in our batch using a tokenizer.
