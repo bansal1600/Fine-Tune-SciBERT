@@ -4,10 +4,10 @@ mkdir results
 
 # Test data
 export RESULTS_FILE=results/test_data_results.txt
-export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
+export DATASET_LOC="https://raw.githubusercontent.com/bansal1600/Fine-Tune-SciBERT/main/datasets/dataset.csv"
 pytest --dataset-loc=$DATASET_LOC tests/data --verbose --disable-warnings > $RESULTS_FILE
 cat $RESULTS_FILE
-
+cl
 # Test code
 export RESULTS_FILE=results/test_code_results.txt
 python -m pytest tests/code --verbose --disable-warnings > $RESULTS_FILE
@@ -16,7 +16,7 @@ cat $RESULTS_FILE
 # Train
 export EXPERIMENT_NAME="llm"
 export RESULTS_FILE=results/training_results.json
-export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
+export DATASET_LOC="https://raw.githubusercontent.com/bansal1600/Fine-Tune-SciBERT/main/datasets/dataset.csv"
 export TRAIN_LOOP_CONFIG='{"dropout_p": 0.5, "lr": 1e-4, "lr_factor": 0.8, "lr_patience": 3}'
 python madewithml/train.py \
     --experiment-name "$EXPERIMENT_NAME" \
@@ -36,7 +36,7 @@ echo $RUN_ID > $RUN_ID_FILE  # used for serving later
 
 # Evaluate
 export RESULTS_FILE=results/evaluation_results.json
-export HOLDOUT_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/holdout.csv"
+export HOLDOUT_LOC="https://raw.githubusercontent.com/GokuMohandas/Fine-Tune-SciBERT/main/datasets/holdout.csv"
 python madewithml/evaluate.py \
     --run-id $RUN_ID \
     --dataset-loc $HOLDOUT_LOC \

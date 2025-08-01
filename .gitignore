@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.db
+
+# MLflow artifacts
+mlruns/
+mlflow.db
+
+# Documentation
+docs/_build/
+docs/madewithml/
+
+# Ignore Mac system files
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# dotenv
+.env
+.venv
+
+#folders
+venv/
+results/
+datasets/

@@ -119,7 +119,11 @@ def train_loop_per_worker(config: dict) -> None:  # pragma: no cover, tested via
     val_ds = train.get_dataset_shard("val")
 
     # Model
-    llm = BertModel.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False)
+    llm = BertModel.from_pretrained(
+        "allenai/scibert_scivocab_uncased", 
+        return_dict=False,
+        cache_dir="/tmp/huggingface_cache"  # Use local cache to avoid repeated downloads
+    )
     model = FinetunedLLM(llm=llm, dropout_p=dropout_p, embedding_dim=llm.config.hidden_size, num_classes=num_classes)
     model = train.torch.prepare_model(model)
 
