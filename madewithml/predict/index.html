@@ -695,7 +695,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Predict tags (with probabilities) for input data from a dataframe.</p>
+      <p>Predict tags (with probabilities) for input data from a dataset.</p>
 
 
 
@@ -710,11 +710,11 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>df</code></b>
-                  (<code><span title="pd.DataFrame">DataFrame</span></code>)
+              <b><code>ds</code></b>
+                  (<code><span title="ray.data.dataset.Dataset">Dataset</span></code>)
               –
               <div class="doc-md-description">
-                <p>dataframe with input features.</p>
+                <p>dataset with input features.</p>
               </div>
             </li>
             <li>
@@ -781,10 +781,10 @@
     <span class="n">ds</span><span class="p">:</span> <span class="n">ray</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span>
     <span class="n">predictor</span><span class="p">:</span> <span class="n">TorchPredictor</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>  <span class="c1"># pragma: no cover, tested with inference workload</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Predict tags (with probabilities) for input data from a dataframe.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Predict tags (with probabilities) for input data from a dataset.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        df (pd.DataFrame): dataframe with input features.</span>
+<span class="sd">        ds (ray.data.dataset.Dataset): dataset with input features.</span>
 <span class="sd">        predictor (TorchPredictor): loaded predictor from a checkpoint.</span>
 
 <span class="sd">    Returns:</span>
