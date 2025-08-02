@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.10.11'
           cache: 'pip'
-      - run: python3 -m pip install mkdocs==1.4.2 mkdocstrings==0.21.2 "mkdocstrings[python]>=0.18"
+      - run: python3 -m pip install mkdocs==1.4.2 mkdocstrings==0.21.2 "mkdocstrings[python]>=0.18" mkdocs-autorefs
 
       # Deploy docs
       - name: Deploy documentation
