@@ -13,6 +13,6 @@ nav:
     - utils: madewithml/utils.md
 theme: readthedocs
 plugins:
-  - mkdocstrings
+  - search
 watch:
   - .  # reload docs for any file changes
