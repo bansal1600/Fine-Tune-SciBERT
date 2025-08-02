@@ -1,5 +1,5 @@
 site_name: Made With ML
-site_url: https://madewithml.com/
+site_url: https://bansal1600.github.io/Fine-Tune-SciBERT/
 repo_url: https://github.com/bansal1600/Fine-Tune-SciBERT/
 nav:
   - Home: index.md
