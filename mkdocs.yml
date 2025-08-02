@@ -1,4 +1,5 @@
 site_name: Made With ML
+site_url: https://madewithml.com/
 repo_url: https://github.com/bansal1600/Fine-Tune-SciBERT/
 nav:
   - Home: index.md
@@ -13,6 +14,6 @@ nav:
     - utils: madewithml/utils.md
 theme: readthedocs
 plugins:
-  - search
+  - mkdocstrings
 watch:
   - .  # reload docs for any file changes
