@@ -78,10 +78,10 @@ def predict_proba(
     ds: ray.data.dataset.Dataset,
     predictor: TorchPredictor,
 ) -> List:  # pragma: no cover, tested with inference workload
-    """Predict tags (with probabilities) for input data from a dataframe.
+    """Predict tags (with probabilities) for input data from a dataset.
 
     Args:
-        df (pd.DataFrame): dataframe with input features.
+        ds (ray.data.dataset.Dataset): dataset with input features.
         predictor (TorchPredictor): loaded predictor from a checkpoint.
 
     Returns:
