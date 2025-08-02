@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://madewithml.com/madewithml/tune/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>tune - Made With ML</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "tune";
+        var mkdocs_page_input_path = "madewithml/tune.md";
+        var mkdocs_page_url = "/madewithml/tune/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Made With ML
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">madewithml</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../data/">data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../models/">models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../train/">train</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">tune</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../evaluate/">evaluate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../predict/">predict</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../serve/">serve</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../utils.md">utils</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Made With ML</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">madewithml</li>
+      <li class="breadcrumb-item active">tune</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/GokuMohandas/Made-With-ML/edit/master/docs/madewithml/tune.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+
+
+<a id="madewithml.tune"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="madewithml.tune.tune_models" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">tune_models</span><span class="p">(</span><span class="n">experiment_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dataset_loc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initial_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cpu_per_worker</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gpu_per_worker</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_runs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">results_fp</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Hyperparameter tuning experiment.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>experiment_name</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>name of the experiment for this training workload.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>dataset_loc</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>location of the dataset.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>initial_params</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>initial config for the tuning workload.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>num_workers</code></b>
+                  (<code>int</code>, default:
+                      <code>1</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of workers to use for training. Defaults to 1.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>cpu_per_worker</code></b>
+                  (<code>int</code>, default:
+                      <code>1</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of CPUs to use per worker. Defaults to 1.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>gpu_per_worker</code></b>
+                  (<code>int</code>, default:
+                      <code>0</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of GPUs to use per worker. Defaults to 0.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>num_runs</code></b>
+                  (<code>int</code>, default:
+                      <code>1</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of runs in this tuning experiment. Defaults to 1.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>num_samples</code></b>
+                  (<code>int</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of samples to use from dataset.
+If this is passed in, it will override the config. Defaults to None.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>num_epochs</code></b>
+                  (<code>int</code>, default:
+                      <code>1</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of epochs to train for.
+If this is passed in, it will override the config. Defaults to None.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>batch_size</code></b>
+                  (<code>int</code>, default:
+                      <code>256</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>number of samples per batch.
+If this is passed in, it will override the config. Defaults to None.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>results_fp</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>filepath to save the tuning results. Defaults to None.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><span title="ray.tune.result_grid.ResultGrid">ResultGrid</span></code>
+            –
+            <div class="doc-md-description">
+              <p>ray.tune.result_grid.ResultGrid: results of the tuning experiment.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary>Source code in <code>madewithml/tune.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tune_models</span><span class="p">(</span>
+    <span class="n">experiment_name</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;name of the experiment for this training workload.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dataset_loc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;location of the dataset.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">initial_params</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;initial config for the tuning workload.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of workers to use for training.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">cpu_per_worker</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of CPUs to use per worker.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">gpu_per_worker</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of GPUs to use per worker.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">num_runs</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of runs in this tuning experiment.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">num_samples</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of samples to use from dataset.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of epochs to train for.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of samples per batch.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
+    <span class="n">results_fp</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;filepath to save results to.&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ray</span><span class="o">.</span><span class="n">tune</span><span class="o">.</span><span class="n">result_grid</span><span class="o">.</span><span class="n">ResultGrid</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hyperparameter tuning experiment.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        experiment_name (str): name of the experiment for this training workload.</span>
+<span class="sd">        dataset_loc (str): location of the dataset.</span>
+<span class="sd">        initial_params (str): initial config for the tuning workload.</span>
+<span class="sd">        num_workers (int, optional): number of workers to use for training. Defaults to 1.</span>
+<span class="sd">        cpu_per_worker (int, optional): number of CPUs to use per worker. Defaults to 1.</span>
+<span class="sd">        gpu_per_worker (int, optional): number of GPUs to use per worker. Defaults to 0.</span>
+<span class="sd">        num_runs (int, optional): number of runs in this tuning experiment. Defaults to 1.</span>
+<span class="sd">        num_samples (int, optional): number of samples to use from dataset.</span>
+<span class="sd">            If this is passed in, it will override the config. Defaults to None.</span>
+<span class="sd">        num_epochs (int, optional): number of epochs to train for.</span>
+<span class="sd">            If this is passed in, it will override the config. Defaults to None.</span>
+<span class="sd">        batch_size (int, optional): number of samples per batch.</span>
+<span class="sd">            If this is passed in, it will override the config. Defaults to None.</span>
+<span class="sd">        results_fp (str, optional): filepath to save the tuning results. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ray.tune.result_grid.ResultGrid: results of the tuning experiment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set up</span>
+    <span class="n">utils</span><span class="o">.</span><span class="n">set_seeds</span><span class="p">()</span>
+    <span class="n">train_loop_config</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">train_loop_config</span><span class="p">[</span><span class="s2">&quot;num_samples&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_samples</span>
+    <span class="n">train_loop_config</span><span class="p">[</span><span class="s2">&quot;num_epochs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_epochs</span>
+    <span class="n">train_loop_config</span><span class="p">[</span><span class="s2">&quot;batch_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">batch_size</span>
+
+    <span class="c1"># Scaling config</span>
+    <span class="n">scaling_config</span> <span class="o">=</span> <span class="n">ScalingConfig</span><span class="p">(</span>
+        <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
+        <span class="n">use_gpu</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">gpu_per_worker</span><span class="p">),</span>
+        <span class="n">resources_per_worker</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;CPU&quot;</span><span class="p">:</span> <span class="n">cpu_per_worker</span><span class="p">,</span> <span class="s2">&quot;GPU&quot;</span><span class="p">:</span> <span class="n">gpu_per_worker</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Dataset</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">dataset_loc</span><span class="o">=</span><span class="n">dataset_loc</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="n">train_loop_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;num_samples&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="n">train_ds</span><span class="p">,</span> <span class="n">val_ds</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">stratify_split</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="s2">&quot;tag&quot;</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;tag&quot;</span><span class="p">)</span>
+    <span class="n">train_loop_config</span><span class="p">[</span><span class="s2">&quot;num_classes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
+
+    <span class="c1"># Dataset config</span>
+    <span class="n">dataset_config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">DatasetConfig</span><span class="p">(</span><span class="n">fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">randomize_block_order</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="n">DatasetConfig</span><span class="p">(</span><span class="n">fit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">randomize_block_order</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Preprocess</span>
+    <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">CustomPreprocessor</span><span class="p">()</span>
+    <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_ds</span><span class="p">)</span>
+    <span class="n">train_ds</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_ds</span><span class="p">)</span>
+    <span class="n">val_ds</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">val_ds</span><span class="p">)</span>
+    <span class="n">train_ds</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span>
+    <span class="n">val_ds</span> <span class="o">=</span> <span class="n">val_ds</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span>
+
+    <span class="c1"># Trainer</span>
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">TorchTrainer</span><span class="p">(</span>
+        <span class="n">train_loop_per_worker</span><span class="o">=</span><span class="n">train</span><span class="o">.</span><span class="n">train_loop_per_worker</span><span class="p">,</span>
+        <span class="n">train_loop_config</span><span class="o">=</span><span class="n">train_loop_config</span><span class="p">,</span>
+        <span class="n">scaling_config</span><span class="o">=</span><span class="n">scaling_config</span><span class="p">,</span>
+        <span class="n">datasets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">train_ds</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="n">val_ds</span><span class="p">},</span>
+        <span class="n">dataset_config</span><span class="o">=</span><span class="n">dataset_config</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;class_to_index&quot;</span><span class="p">:</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">class_to_index</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Checkpoint configuration</span>
+    <span class="n">checkpoint_config</span> <span class="o">=</span> <span class="n">CheckpointConfig</span><span class="p">(</span>
+        <span class="n">num_to_keep</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">checkpoint_score_attribute</span><span class="o">=</span><span class="s2">&quot;val_loss&quot;</span><span class="p">,</span>
+        <span class="n">checkpoint_score_order</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Run configuration</span>
+    <span class="n">mlflow_callback</span> <span class="o">=</span> <span class="n">MLflowLoggerCallback</span><span class="p">(</span>
+        <span class="n">tracking_uri</span><span class="o">=</span><span class="n">MLFLOW_TRACKING_URI</span><span class="p">,</span>
+        <span class="n">experiment_name</span><span class="o">=</span><span class="n">experiment_name</span><span class="p">,</span>
+        <span class="n">save_artifact</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">run_config</span> <span class="o">=</span> <span class="n">RunConfig</span><span class="p">(</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">mlflow_callback</span><span class="p">],</span> <span class="n">checkpoint_config</span><span class="o">=</span><span class="n">checkpoint_config</span><span class="p">,</span> <span class="n">storage_path</span><span class="o">=</span><span class="n">EFS_DIR</span><span class="p">,</span> <span class="n">local_dir</span><span class="o">=</span><span class="n">EFS_DIR</span><span class="p">)</span>
+
+    <span class="c1"># Hyperparameters to start with</span>
+    <span class="n">initial_params</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">initial_params</span><span class="p">)</span>
+    <span class="n">search_alg</span> <span class="o">=</span> <span class="n">HyperOptSearch</span><span class="p">(</span><span class="n">points_to_evaluate</span><span class="o">=</span><span class="n">initial_params</span><span class="p">)</span>
+    <span class="n">search_alg</span> <span class="o">=</span> <span class="n">ConcurrencyLimiter</span><span class="p">(</span><span class="n">search_alg</span><span class="p">,</span> <span class="n">max_concurrent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># trade off b/w optimization and search space</span>
+
+    <span class="c1"># Parameter space</span>
+    <span class="n">param_space</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;train_loop_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;dropout_p&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+            <span class="s2">&quot;lr&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">loguniform</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mf">5e-4</span><span class="p">),</span>
+            <span class="s2">&quot;lr_factor&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+            <span class="s2">&quot;lr_patience&quot;</span><span class="p">:</span> <span class="n">tune</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Scheduler</span>
+    <span class="n">scheduler</span> <span class="o">=</span> <span class="n">AsyncHyperBandScheduler</span><span class="p">(</span>
+        <span class="n">max_t</span><span class="o">=</span><span class="n">train_loop_config</span><span class="p">[</span><span class="s2">&quot;num_epochs&quot;</span><span class="p">],</span>  <span class="c1"># max epoch (&lt;time_attr&gt;) per trial</span>
+        <span class="n">grace_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># min epoch (&lt;time_attr&gt;) per trial</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Tune config</span>
+    <span class="n">tune_config</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">TuneConfig</span><span class="p">(</span>
+        <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;val_loss&quot;</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">,</span>
+        <span class="n">search_alg</span><span class="o">=</span><span class="n">search_alg</span><span class="p">,</span>
+        <span class="n">scheduler</span><span class="o">=</span><span class="n">scheduler</span><span class="p">,</span>
+        <span class="n">num_samples</span><span class="o">=</span><span class="n">num_runs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Tuner</span>
+    <span class="n">tuner</span> <span class="o">=</span> <span class="n">Tuner</span><span class="p">(</span>
+        <span class="n">trainable</span><span class="o">=</span><span class="n">trainer</span><span class="p">,</span>
+        <span class="n">run_config</span><span class="o">=</span><span class="n">run_config</span><span class="p">,</span>
+        <span class="n">param_space</span><span class="o">=</span><span class="n">param_space</span><span class="p">,</span>
+        <span class="n">tune_config</span><span class="o">=</span><span class="n">tune_config</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Tune</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">tuner</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">best_trial</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_best_result</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;val_loss&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%B </span><span class="si">%d</span><span class="s2">, %Y %I:%M:%S %p&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;run_id&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_run_id</span><span class="p">(</span><span class="n">experiment_name</span><span class="o">=</span><span class="n">experiment_name</span><span class="p">,</span> <span class="n">trial_id</span><span class="o">=</span><span class="n">best_trial</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;trial_id&quot;</span><span class="p">]),</span>
+        <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="n">best_trial</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;train_loop_config&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;metrics&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">dict_to_list</span><span class="p">(</span><span class="n">best_trial</span><span class="o">.</span><span class="n">metrics_dataframe</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span> <span class="s2">&quot;train_loss&quot;</span><span class="p">,</span> <span class="s2">&quot;val_loss&quot;</span><span class="p">]),</span>
+    <span class="p">}</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">results_fp</span><span class="p">:</span>  <span class="c1"># pragma: no cover, saving results</span>
+        <span class="n">utils</span><span class="o">.</span><span class="n">save_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">results_fp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">results</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../train/" class="btn btn-neutral float-left" title="train"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../evaluate/" class="btn btn-neutral float-right" title="evaluate">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/GokuMohandas/Made-With-ML/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../train/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../evaluate/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
