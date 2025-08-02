@@ -78,7 +78,7 @@
           <li class="breadcrumb-item">madewithml</li>
       <li class="breadcrumb-item active">predict</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/GokuMohandas/Made-With-ML/edit/master/docs/madewithml/predict.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/edit/master/docs/madewithml/predict.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -110,6 +110,7 @@
 
 
 
+
 <h2 id="madewithml.predict.decode" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">decode</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">index_to_class</span><span class="p">)</span></code>
 
@@ -133,7 +134,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>indices</code></b>
+              <b>indices</b>
                   (<code><span title="typing.Iterable">Iterable</span>[<span title="typing.Any">Any</span>]</code>)
               –
               <div class="doc-md-description">
@@ -141,7 +142,7 @@
               </div>
             </li>
             <li>
-              <b><code>index_to_class</code></b>
+              <b>index_to_class</b>
                   (<code><span title="typing.Dict">Dict</span></code>)
               –
               <div class="doc-md-description">
@@ -166,7 +167,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>List</code></b>(                <code><span title="typing.List">List</span></code>
+<b>List</b>(                <code><span title="typing.List">List</span></code>
 )            –
             <div class="doc-md-description">
               <p>list of labels.</p>
@@ -178,7 +179,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/predict.py</code></summary>
+            <summary> <code>madewithml/predict.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
@@ -211,6 +212,7 @@
 
 
 
+
 <h2 id="madewithml.predict.format_prob" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">format_prob</span><span class="p">(</span><span class="n">prob</span><span class="p">,</span> <span class="n">index_to_class</span><span class="p">)</span></code>
 
@@ -234,7 +236,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>prob</code></b>
+              <b>prob</b>
                   (<code><span title="typing.Iterable">Iterable</span></code>)
               –
               <div class="doc-md-description">
@@ -242,7 +244,7 @@
               </div>
             </li>
             <li>
-              <b><code>index_to_class</code></b>
+              <b>index_to_class</b>
                   (<code><span title="typing.Dict">Dict</span></code>)
               –
               <div class="doc-md-description">
@@ -267,7 +269,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>Dictionary mapping class label to probability.</p>
@@ -279,7 +281,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/predict.py</code></summary>
+            <summary> <code>madewithml/predict.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
@@ -318,6 +320,7 @@
 
 
 
+
 <h2 id="madewithml.predict.get_best_checkpoint" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_best_checkpoint</span><span class="p">(</span><span class="n">run_id</span><span class="p">)</span></code>
 
@@ -341,7 +344,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>run_id</code></b>
+              <b>run_id</b>
                   (<code>str</code>)
               –
               <div class="doc-md-description">
@@ -366,7 +369,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>TorchCheckpoint</code></b>(                <code><span title="ray.train.torch.torch_checkpoint.TorchCheckpoint">TorchCheckpoint</span></code>
+<b>TorchCheckpoint</b>(                <code><span title="ray.train.torch.torch_checkpoint.TorchCheckpoint">TorchCheckpoint</span></code>
 )            –
             <div class="doc-md-description">
               <p>Best checkpoint from the run.</p>
@@ -378,7 +381,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/predict.py</code></summary>
+            <summary> <code>madewithml/predict.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">122</span>
 <span class="normal">123</span>
 <span class="normal">124</span>
@@ -413,6 +416,7 @@
 
 
 
+
 <h2 id="madewithml.predict.get_best_run_id" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_best_run_id</span><span class="p">(</span><span class="n">experiment_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
 
@@ -436,7 +440,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>experiment_name</code></b>
+              <b>experiment_name</b>
                   (<code>str</code>, default:
                       <code>&#39;&#39;</code>
 )
@@ -446,7 +450,7 @@
               </div>
             </li>
             <li>
-              <b><code>metric</code></b>
+              <b>metric</b>
                   (<code>str</code>, default:
                       <code>&#39;&#39;</code>
 )
@@ -456,7 +460,7 @@
               </div>
             </li>
             <li>
-              <b><code>mode</code></b>
+              <b>mode</b>
                   (<code>str</code>, default:
                       <code>&#39;&#39;</code>
 )
@@ -483,7 +487,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>str</code></b>(                <code>str</code>
+<b>str</b>(                <code>str</code>
 )            –
             <div class="doc-md-description">
               <p>best run id from experiment.</p>
@@ -495,7 +499,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/predict.py</code></summary>
+            <summary> <code>madewithml/predict.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
@@ -544,6 +548,7 @@
 
 
 
+
 <h2 id="madewithml.predict.predict" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -567,7 +572,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>run_id</code></b>
+              <b>run_id</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -577,7 +582,7 @@
               </div>
             </li>
             <li>
-              <b><code>title</code></b>
+              <b>title</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -587,7 +592,7 @@
               </div>
             </li>
             <li>
-              <b><code>description</code></b>
+              <b>description</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -614,7 +619,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>prediction results for the input data.</p>
@@ -626,7 +631,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/predict.py</code></summary>
+            <summary> <code>madewithml/predict.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
 <span class="normal">137</span>
 <span class="normal">138</span>
@@ -687,6 +692,7 @@
 
 
 
+
 <h2 id="madewithml.predict.predict_proba" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">predict_proba</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">predictor</span><span class="p">)</span></code>
 
@@ -710,7 +716,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>ds</code></b>
+              <b>ds</b>
                   (<code><span title="ray.data.dataset.Dataset">Dataset</span></code>)
               –
               <div class="doc-md-description">
@@ -718,7 +724,7 @@
               </div>
             </li>
             <li>
-              <b><code>predictor</code></b>
+              <b>predictor</b>
                   (<code><span title="madewithml.predict.TorchPredictor">TorchPredictor</span></code>)
               –
               <div class="doc-md-description">
@@ -743,7 +749,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>List</code></b>(                <code><span title="typing.List">List</span></code>
+<b>List</b>(                <code><span title="typing.List">List</span></code>
 )            –
             <div class="doc-md-description">
               <p>list of predicted labels.</p>
@@ -755,7 +761,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/predict.py</code></summary>
+            <summary> <code>madewithml/predict.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
@@ -840,7 +846,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/GokuMohandas/Made-With-ML/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     

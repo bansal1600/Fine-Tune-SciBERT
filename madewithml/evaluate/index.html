@@ -78,7 +78,7 @@
           <li class="breadcrumb-item">madewithml</li>
       <li class="breadcrumb-item active">evaluate</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/GokuMohandas/Made-With-ML/edit/master/docs/madewithml/evaluate.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/edit/master/docs/madewithml/evaluate.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -110,6 +110,7 @@
 
 
 
+
 <h2 id="madewithml.evaluate.evaluate" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">evaluate</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dataset_loc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">results_fp</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -133,7 +134,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>run_id</code></b>
+              <b>run_id</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -143,7 +144,7 @@
               </div>
             </li>
             <li>
-              <b><code>dataset_loc</code></b>
+              <b>dataset_loc</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -153,7 +154,7 @@
               </div>
             </li>
             <li>
-              <b><code>results_fp</code></b>
+              <b>results_fp</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -180,7 +181,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>model's performance metrics on the dataset.</p>
@@ -192,7 +193,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/evaluate.py</code></summary>
+            <summary> <code>madewithml/evaluate.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">108</span>
 <span class="normal">109</span>
 <span class="normal">110</span>
@@ -289,6 +290,7 @@
 
 
 
+
 <h2 id="madewithml.evaluate.get_overall_metrics" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_overall_metrics</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span></code>
 
@@ -312,7 +314,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>y_true</code></b>
+              <b>y_true</b>
                   (<code><span title="numpy.ndarray">ndarray</span></code>)
               –
               <div class="doc-md-description">
@@ -320,7 +322,7 @@
               </div>
             </li>
             <li>
-              <b><code>y_pred</code></b>
+              <b>y_pred</b>
                   (<code><span title="numpy.ndarray">ndarray</span></code>)
               –
               <div class="doc-md-description">
@@ -345,7 +347,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>overall metrics.</p>
@@ -357,7 +359,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/evaluate.py</code></summary>
+            <summary> <code>madewithml/evaluate.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
@@ -404,6 +406,7 @@
 
 
 
+
 <h2 id="madewithml.evaluate.get_per_class_metrics" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_per_class_metrics</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">class_to_index</span><span class="p">)</span></code>
 
@@ -427,7 +430,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>y_true</code></b>
+              <b>y_true</b>
                   (<code><span title="numpy.ndarray">ndarray</span></code>)
               –
               <div class="doc-md-description">
@@ -435,7 +438,7 @@
               </div>
             </li>
             <li>
-              <b><code>y_pred</code></b>
+              <b>y_pred</b>
                   (<code><span title="numpy.ndarray">ndarray</span></code>)
               –
               <div class="doc-md-description">
@@ -443,7 +446,7 @@
               </div>
             </li>
             <li>
-              <b><code>class_to_index</code></b>
+              <b>class_to_index</b>
                   (<code><span title="typing.Dict">Dict</span></code>)
               –
               <div class="doc-md-description">
@@ -468,7 +471,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>per class metrics.</p>
@@ -480,7 +483,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/evaluate.py</code></summary>
+            <summary> <code>madewithml/evaluate.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
@@ -535,6 +538,7 @@
 
 
 
+
 <h2 id="madewithml.evaluate.get_slice_metrics" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_slice_metrics</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">ds</span><span class="p">)</span></code>
 
@@ -558,7 +562,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>y_true</code></b>
+              <b>y_true</b>
                   (<code><span title="numpy.ndarray">ndarray</span></code>)
               –
               <div class="doc-md-description">
@@ -566,7 +570,7 @@
               </div>
             </li>
             <li>
-              <b><code>y_pred</code></b>
+              <b>y_pred</b>
                   (<code><span title="numpy.ndarray">ndarray</span></code>)
               –
               <div class="doc-md-description">
@@ -574,7 +578,7 @@
               </div>
             </li>
             <li>
-              <b><code>ds</code></b>
+              <b>ds</b>
                   (<code><span title="ray.data.Dataset">Dataset</span></code>)
               –
               <div class="doc-md-description">
@@ -589,7 +593,7 @@
     Dict: performance metrics for slices.</p>
 
           <details class="quote">
-            <summary>Source code in <code>madewithml/evaluate.py</code></summary>
+            <summary> <code>madewithml/evaluate.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
@@ -648,6 +652,7 @@
 
 
 
+
 <h2 id="madewithml.evaluate.nlp_llm" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">nlp_llm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
 
@@ -659,7 +664,7 @@
       <p>NLP projects that use LLMs.</p>
 
           <details class="quote">
-            <summary>Source code in <code>madewithml/evaluate.py</code></summary>
+            <summary> <code>madewithml/evaluate.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span>
@@ -684,6 +689,7 @@
 
 
 
+
 <h2 id="madewithml.evaluate.short_text" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">short_text</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>
 
@@ -695,7 +701,7 @@
       <p>Projects with short titles and descriptions.</p>
 
           <details class="quote">
-            <summary>Source code in <code>madewithml/evaluate.py</code></summary>
+            <summary> <code>madewithml/evaluate.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">76</span>
 <span class="normal">77</span>
 <span class="normal">78</span>
@@ -744,7 +750,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/GokuMohandas/Made-With-ML/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     

@@ -78,7 +78,7 @@
           <li class="breadcrumb-item">madewithml</li>
       <li class="breadcrumb-item active">data</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/GokuMohandas/Made-With-ML/edit/master/docs/madewithml/data.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/edit/master/docs/madewithml/data.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -105,6 +105,7 @@
 
 
 <div class="doc doc-object doc-class">
+
 
 
 
@@ -172,12 +173,12 @@
 
   </div>
 
-
 </div>
 
 
 
 <div class="doc doc-object doc-function">
+
 
 
 
@@ -204,7 +205,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>text</code></b>
+              <b>text</b>
                   (<code>str</code>)
               –
               <div class="doc-md-description">
@@ -212,7 +213,7 @@
               </div>
             </li>
             <li>
-              <b><code>stopwords</code></b>
+              <b>stopwords</b>
                   (<code><span title="typing.List">List</span></code>, default:
                       <code><span title="madewithml.config.STOPWORDS">STOPWORDS</span></code>
 )
@@ -239,7 +240,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>str</code></b>(                <code>str</code>
+<b>str</b>(                <code>str</code>
 )            –
             <div class="doc-md-description">
               <p>cleaned text.</p>
@@ -251,7 +252,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/data.py</code></summary>
+            <summary> <code>madewithml/data.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 77</span>
 <span class="normal"> 78</span>
 <span class="normal"> 79</span>
@@ -312,6 +313,7 @@
 
 
 
+
 <h2 id="madewithml.data.get_tokenizer" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">get_tokenizer</span><span class="p">()</span></code>
 
@@ -323,7 +325,7 @@
       <p>Get or initialize the global tokenizer.</p>
 
           <details class="quote">
-            <summary>Source code in <code>madewithml/data.py</code></summary>
+            <summary> <code>madewithml/data.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">108</span>
 <span class="normal">109</span>
 <span class="normal">110</span>
@@ -350,6 +352,7 @@
 
 
 
+
 <h2 id="madewithml.data.load_data" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">load_data</span><span class="p">(</span><span class="n">dataset_loc</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -373,7 +376,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>dataset_loc</code></b>
+              <b>dataset_loc</b>
                   (<code>str</code>)
               –
               <div class="doc-md-description">
@@ -381,7 +384,7 @@
               </div>
             </li>
             <li>
-              <b><code>num_samples</code></b>
+              <b>num_samples</b>
                   (<code>int</code>, default:
                       <code>None</code>
 )
@@ -408,7 +411,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dataset</code></b>(                <code><span title="ray.data.Dataset">Dataset</span></code>
+<b>Dataset</b>(                <code><span title="ray.data.Dataset">Dataset</span></code>
 )            –
             <div class="doc-md-description">
               <p>Our dataset represented by a Ray Dataset.</p>
@@ -420,7 +423,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/data.py</code></summary>
+            <summary> <code>madewithml/data.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
@@ -459,6 +462,7 @@
 
 
 
+
 <h2 id="madewithml.data.preprocess" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">preprocess</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">class_to_index</span><span class="p">)</span></code>
 
@@ -482,7 +486,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>df</code></b>
+              <b>df</b>
                   (<code><span title="pandas.DataFrame">DataFrame</span></code>)
               –
               <div class="doc-md-description">
@@ -490,7 +494,7 @@
               </div>
             </li>
             <li>
-              <b><code>class_to_index</code></b>
+              <b>class_to_index</b>
                   (<code><span title="typing.Dict">Dict</span></code>)
               –
               <div class="doc-md-description">
@@ -515,7 +519,7 @@
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>preprocessed data (ids, masks, targets).</p>
@@ -527,7 +531,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/data.py</code></summary>
+            <summary> <code>madewithml/data.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
@@ -572,6 +576,7 @@
 
 
 
+
 <h2 id="madewithml.data.stratify_split" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">stratify_split</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">stratify</span><span class="p">,</span> <span class="n">test_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span></code>
 
@@ -597,7 +602,7 @@ want to stratify on.</p>
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>ds</code></b>
+              <b>ds</b>
                   (<code><span title="ray.data.Dataset">Dataset</span></code>)
               –
               <div class="doc-md-description">
@@ -605,7 +610,7 @@ want to stratify on.</p>
               </div>
             </li>
             <li>
-              <b><code>stratify</code></b>
+              <b>stratify</b>
                   (<code>str</code>)
               –
               <div class="doc-md-description">
@@ -613,7 +618,7 @@ want to stratify on.</p>
               </div>
             </li>
             <li>
-              <b><code>test_size</code></b>
+              <b>test_size</b>
                   (<code>float</code>)
               –
               <div class="doc-md-description">
@@ -621,7 +626,7 @@ want to stratify on.</p>
               </div>
             </li>
             <li>
-              <b><code>shuffle</code></b>
+              <b>shuffle</b>
                   (<code>bool</code>, default:
                       <code>True</code>
 )
@@ -631,7 +636,7 @@ want to stratify on.</p>
               </div>
             </li>
             <li>
-              <b><code>seed</code></b>
+              <b>seed</b>
                   (<code>int</code>, default:
                       <code>1234</code>
 )
@@ -670,7 +675,7 @@ want to stratify on.</p>
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/data.py</code></summary>
+            <summary> <code>madewithml/data.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
@@ -771,6 +776,7 @@ want to stratify on.</p>
 
 
 
+
 <h2 id="madewithml.data.tokenize" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">tokenize</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span></code>
 
@@ -794,7 +800,7 @@ want to stratify on.</p>
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>batch</code></b>
+              <b>batch</b>
                   (<code><span title="typing.Dict">Dict</span></code>)
               –
               <div class="doc-md-description">
@@ -819,7 +825,7 @@ want to stratify on.</p>
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>Dict</code></b>(                <code><span title="typing.Dict">Dict</span></code>
+<b>Dict</b>(                <code><span title="typing.Dict">Dict</span></code>
 )            –
             <div class="doc-md-description">
               <p>batch of data with the results of tokenization (<code>input_ids</code> and <code>attention_mask</code>) on the text inputs.</p>
@@ -831,7 +837,7 @@ want to stratify on.</p>
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/data.py</code></summary>
+            <summary> <code>madewithml/data.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
 <span class="normal">119</span>
 <span class="normal">120</span>
@@ -896,7 +902,7 @@ want to stratify on.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/GokuMohandas/Made-With-ML/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     

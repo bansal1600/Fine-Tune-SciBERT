@@ -78,7 +78,7 @@
           <li class="breadcrumb-item">madewithml</li>
       <li class="breadcrumb-item active">train</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/GokuMohandas/Made-With-ML/edit/master/docs/madewithml/train.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/edit/master/docs/madewithml/train.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -110,6 +110,7 @@
 
 
 
+
 <h2 id="madewithml.train.eval_step" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">eval_step</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">)</span></code>
 
@@ -133,7 +134,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>ds</code></b>
+              <b>ds</b>
                   (<code><span title="ray.data.Dataset">Dataset</span></code>)
               –
               <div class="doc-md-description">
@@ -141,7 +142,7 @@
               </div>
             </li>
             <li>
-              <b><code>batch_size</code></b>
+              <b>batch_size</b>
                   (<code>int</code>)
               –
               <div class="doc-md-description">
@@ -149,7 +150,7 @@
               </div>
             </li>
             <li>
-              <b><code>model</code></b>
+              <b>model</b>
                   (<code><span title="torch.nn.Module">Module</span></code>)
               –
               <div class="doc-md-description">
@@ -157,7 +158,7 @@
               </div>
             </li>
             <li>
-              <b><code>num_classes</code></b>
+              <b>num_classes</b>
                   (<code>int</code>)
               –
               <div class="doc-md-description">
@@ -165,7 +166,7 @@
               </div>
             </li>
             <li>
-              <b><code>loss_fn</code></b>
+              <b>loss_fn</b>
                   (<code><span title="torch.nn.loss._WeightedLoss">_WeightedLoss</span></code>)
               –
               <div class="doc-md-description">
@@ -202,7 +203,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/train.py</code></summary>
+            <summary> <code>madewithml/train.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
 <span class="normal">72</span>
 <span class="normal">73</span>
@@ -269,6 +270,7 @@
 
 
 
+
 <h2 id="madewithml.train.train_loop_per_worker" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">train_loop_per_worker</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></code>
 
@@ -292,7 +294,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>config</code></b>
+              <b>config</b>
                   (<code>dict</code>)
               –
               <div class="doc-md-description">
@@ -305,7 +307,7 @@
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/train.py</code></summary>
+            <summary> <code>madewithml/train.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
@@ -416,6 +418,7 @@
 
 
 
+
 <h2 id="madewithml.train.train_model" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">train_model</span><span class="p">(</span><span class="n">experiment_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dataset_loc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">train_loop_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cpu_per_worker</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gpu_per_worker</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">results_fp</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -439,7 +442,7 @@
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>experiment_name</code></b>
+              <b>experiment_name</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -449,7 +452,7 @@
               </div>
             </li>
             <li>
-              <b><code>dataset_loc</code></b>
+              <b>dataset_loc</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -459,7 +462,7 @@
               </div>
             </li>
             <li>
-              <b><code>train_loop_config</code></b>
+              <b>train_loop_config</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -469,7 +472,7 @@
               </div>
             </li>
             <li>
-              <b><code>num_workers</code></b>
+              <b>num_workers</b>
                   (<code>int</code>, default:
                       <code>1</code>
 )
@@ -479,7 +482,7 @@
               </div>
             </li>
             <li>
-              <b><code>cpu_per_worker</code></b>
+              <b>cpu_per_worker</b>
                   (<code>int</code>, default:
                       <code>1</code>
 )
@@ -489,7 +492,7 @@
               </div>
             </li>
             <li>
-              <b><code>gpu_per_worker</code></b>
+              <b>gpu_per_worker</b>
                   (<code>int</code>, default:
                       <code>0</code>
 )
@@ -499,7 +502,7 @@
               </div>
             </li>
             <li>
-              <b><code>num_samples</code></b>
+              <b>num_samples</b>
                   (<code>int</code>, default:
                       <code>None</code>
 )
@@ -510,7 +513,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>num_epochs</code></b>
+              <b>num_epochs</b>
                   (<code>int</code>, default:
                       <code>1</code>
 )
@@ -521,7 +524,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>batch_size</code></b>
+              <b>batch_size</b>
                   (<code>int</code>, default:
                       <code>256</code>
 )
@@ -532,7 +535,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>results_fp</code></b>
+              <b>results_fp</b>
                   (<code>str</code>, default:
                       <code>None</code>
 )
@@ -571,7 +574,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/train.py</code></summary>
+            <summary> <code>madewithml/train.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">153</span>
 <span class="normal">154</span>
 <span class="normal">155</span>
@@ -790,6 +793,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
 
 
 
+
 <h2 id="madewithml.train.train_step" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">train_step</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span></code>
 
@@ -813,7 +817,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
       <td class="field-body">
         <ul class="first simple">
             <li>
-              <b><code>ds</code></b>
+              <b>ds</b>
                   (<code><span title="ray.data.Dataset">Dataset</span></code>)
               –
               <div class="doc-md-description">
@@ -821,7 +825,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>batch_size</code></b>
+              <b>batch_size</b>
                   (<code>int</code>)
               –
               <div class="doc-md-description">
@@ -829,7 +833,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>model</code></b>
+              <b>model</b>
                   (<code><span title="torch.nn.Module">Module</span></code>)
               –
               <div class="doc-md-description">
@@ -837,7 +841,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>num_classes</code></b>
+              <b>num_classes</b>
                   (<code>int</code>)
               –
               <div class="doc-md-description">
@@ -845,7 +849,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>loss_fn</code></b>
+              <b>loss_fn</b>
                   (<code><span title="torch.nn.loss._WeightedLoss">_WeightedLoss</span></code>)
               –
               <div class="doc-md-description">
@@ -853,7 +857,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
               </div>
             </li>
             <li>
-              <b><code>optimizer</code></b>
+              <b>optimizer</b>
                   (<code><span title="torch.optimizer.Optimizer">Optimizer</span></code>)
               –
               <div class="doc-md-description">
@@ -878,7 +882,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
     <td class="field-body">
       <ul class="first simple">
           <li>
-<b><code>float</code></b>(                <code>float</code>
+<b>float</b>(                <code>float</code>
 )            –
             <div class="doc-md-description">
               <p>cumulative loss for the dataset.</p>
@@ -890,7 +894,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
   </tbody>
 </table>
           <details class="quote">
-            <summary>Source code in <code>madewithml/train.py</code></summary>
+            <summary> <code>madewithml/train.py</code></summary>
             <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
@@ -997,7 +1001,7 @@ If this is passed in, it will override the config. Defaults to None.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/GokuMohandas/Made-With-ML/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/bansal1600/Fine-Tune-SciBERT/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
